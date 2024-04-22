@@ -2,22 +2,48 @@ package main
 
 import (
 	"fmt"
-	"math"
+	// "math"
 )
 
-// import "rsc.io/quote"
+func main(){
+	// basic type
+	// a := 1
+	// for a <= 10{
+	// 	fmt.Println(a)
+	// 	a++
+	// }
 
-const s string = "Hello, World!"
+	// // classic initial
+	// for i := 1; i <= 10; i++ {
+	// 	fmt.Println("Loop", i)
+	// }
 
-func main() {
-	fmt.Println(s)
-	fmt.Println(math.Pi)
-	const n = 500000000
+	// // basic range
+	// for i := range 5{
+	// 	fmt.Println("Range", i)
+	// }
 
-	const d = 30000000000000/n 
-	fmt.Println(d)
+	// // range loop gets to the last item
+	// for _, i := range []int{1, 11, 3, 4, 5, 6, 7, 8, 9, 10} {
+	// 	fmt.Println("Range", i)
+	// }
 
-	fmt.Println(int64(math.Sin(30)))
+	// // range loop skips the last item
+	// for  i := range []int{1, 11, 3, 4, 5, 6, 7, 8, 9, 10} {
+	// 	fmt.Println("Range", i)
+	// }
 
+	// with a break
+	for {
+        fmt.Println("loop")
+        break
+    }
 
+	// using mod operator and continue
+	for n := range 6 {
+        if n%2 == 0 {
+            continue
+        }
+        fmt.Println(n)
+    }
 }
