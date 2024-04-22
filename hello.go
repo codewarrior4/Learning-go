@@ -1,26 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 // import "rsc.io/quote"
 
+const s string = "Hello, World!"
+
 func main() {
-    
-	var s string = "Hello, World!"
 	fmt.Println(s)
+	fmt.Println(math.Pi)
+	const n = 500000000
 
-	var b,c int = 1,2
-	fmt.Println(b,c)
+	const d = 30000000000000/n 
+	fmt.Println(d)
 
-	var d,e bool = true,false
-	fmt.Println(d,e)
+	fmt.Println(int64(math.Sin(30)))
 
-	var f,g int32 = 1,2
-	fmt.Println(f,g)
 
-	var h,i int64 = 1907990988897,26879909908
-	fmt.Println(h,i)
-
-	var j,k uint = 1,2
-	fmt.Println(j,k)
 }
