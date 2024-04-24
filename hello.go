@@ -1,49 +1,50 @@
 package main
 
 import (
-	"fmt"
-	// "math"
+    "fmt"
+    "time"
 )
 
-func main(){
-	// basic type
-	// a := 1
-	// for a <= 10{
-	// 	fmt.Println(a)
-	// 	a++
-	// }
+func main() {
 
-	// // classic initial
-	// for i := 1; i <= 10; i++ {
-	// 	fmt.Println("Loop", i)
-	// }
-
-	// // basic range
-	// for i := range 5{
-	// 	fmt.Println("Range", i)
-	// }
-
-	// // range loop gets to the last item
-	// for _, i := range []int{1, 11, 3, 4, 5, 6, 7, 8, 9, 10} {
-	// 	fmt.Println("Range", i)
-	// }
-
-	// // range loop skips the last item
-	// for  i := range []int{1, 11, 3, 4, 5, 6, 7, 8, 9, 10} {
-	// 	fmt.Println("Range", i)
-	// }
-
-	// with a break
-	for {
-        fmt.Println("loop")
-        break
+    i := 2
+    fmt.Print("Write ", i, " as ")
+    switch i {
+    case 1:
+        fmt.Println("one")
+    case 2:
+        fmt.Println("two")
+    case 3:
+        fmt.Println("three")
     }
 
-	// using mod operator and continue
-	for n := range 6 {
-        if n%2 == 0 {
-            continue
+    switch time.Now().Weekday() {
+    case time.Saturday, time.Sunday:
+        fmt.Println("It's the weekend")
+    default:
+        fmt.Println("It's a weekday")
+    }
+
+    t := time.Now()
+    switch {
+    case t.Hour() < 12:
+        fmt.Println("It's before noon")
+    default:
+        fmt.Println("It's after noon")
+    }
+
+    whatAmI := func(i interface{}) {
+        switch t := i.(type) {
+        case bool:
+            fmt.Println("I'm a bool")
+        case int:
+            fmt.Println("I'm an int")
+        default:
+            fmt.Printf("Don't know type %T\n", t)
         }
-        fmt.Println(n)
     }
+	
+    whatAmI(true)
+    whatAmI(1)
+    whatAmI("hey")
 }
