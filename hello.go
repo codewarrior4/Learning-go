@@ -1,44 +1,25 @@
-package main
+package main 
 
-import (
-	"fmt"
-	"maps"
-)
+import "fmt"
 
-func main() {
-	
-	m:= make(map[string]int)
+func main(){
 
-	m["k1"] = 7
-    m["k2"] = 13
+	// working on ranges
 
-    fmt.Println("map:", m)
+	nums := []int{2, 3, 4}
 
-	v1 := m["k1"]
-    fmt.Println("v1:", v1)
+	for _, num := range nums {
+		fmt.Println(num)
+	}
 
-    v3 := m["k3"]
-    fmt.Println("v3:", v3)
-
-    fmt.Println("len:", len(m))
-
-	// deletes a key
-	delete(m, "k2"); 
-	fmt.Println("map:", m)
-
-	// deletes all keys
-	clear(m)
-	fmt.Println("map:", m)
-
-	_, prs := m["k2"]
-    fmt.Println("prs:", prs)
-
-	n := map[string]int{"foo": 1, "bar": 2}
-    fmt.Println("map:", n)
-
-    n2 := map[string]int{"foo": 1, "bar": 2}
-    if maps.Equal(n, n2) {
-        fmt.Println("n == n2")
+	for i, num := range nums {
+        if num == 3 {
+            fmt.Println("index:", i)
+        }
     }
-	
+
+	kvs := map[string]string{"a": "apple", "b": "banana"}
+    for k, v := range kvs {
+        fmt.Printf("%s -> %s\n", k, v)
+    }
 }
