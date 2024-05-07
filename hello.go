@@ -2,24 +2,41 @@ package main
 
 import "fmt"
 
-func main(){
 
-	// working on ranges
+// basic functions
 
-	nums := []int{2, 3, 4}
+func addition(a, b int) int{
+	return a + b
+}
+
+// multiple return values
+func vals() (int, int) {
+	return 3, 7
+}
+
+// variadic functions
+
+func sum(nums ...int) {
+	total := 0
 
 	for _, num := range nums {
-		fmt.Println(num)
+		total += num
 	}
+	fmt.Println(total)
+}
 
-	for i, num := range nums {
-        if num == 3 {
-            fmt.Println("index:", i)
-        }
-    }
+func main(){
 
-	kvs := map[string]string{"a": "apple", "b": "banana"}
-    for k, v := range kvs {
-        fmt.Printf("%s -> %s\n", k, v)
-    }
+	fmt.Println(addition(1, 2))
+	a, b := vals()
+	fmt.Println(a, b)
+
+	_, c := vals()
+	fmt.Println(c)
+
+	sum(1, 2)
+	sum(1, 2, 3)
+
+	var nums = []int{1, 2, 3, 4}
+	sum(nums...)
 }
